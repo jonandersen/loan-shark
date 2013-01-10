@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05418D32169EF2EB0092372D /* TransactionsViewController.m */; };
 		056E9C30169DA76200BE97BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C2F169DA76200BE97BB /* UIKit.framework */; };
 		056E9C32169DA76200BE97BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C31169DA76200BE97BB /* Foundation.framework */; };
 		056E9C34169DA76200BE97BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C33169DA76200BE97BB /* CoreGraphics.framework */; };
@@ -18,16 +19,24 @@
 		056E9C46169DA76300BE97BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C45169DA76300BE97BB /* Default-568h@2x.png */; };
 		056E9C49169DA76300BE97BB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C47169DA76300BE97BB /* MainStoryboard_iPhone.storyboard */; };
 		056E9C4C169DA76300BE97BB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C4A169DA76300BE97BB /* MainStoryboard_iPad.storyboard */; };
-		056E9C4F169DA76300BE97BB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056E9C4E169DA76300BE97BB /* FirstViewController.m */; };
 		056E9C51169DA76300BE97BB /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C50169DA76300BE97BB /* first.png */; };
 		056E9C53169DA76300BE97BB /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C52169DA76300BE97BB /* first@2x.png */; };
-		056E9C56169DA76300BE97BB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056E9C55169DA76300BE97BB /* SecondViewController.m */; };
 		056E9C58169DA76300BE97BB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C57169DA76300BE97BB /* second.png */; };
 		056E9C5A169DA76300BE97BB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 056E9C59169DA76300BE97BB /* second@2x.png */; };
+		059E3760169DC098005E5E15 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059E375F169DC098005E5E15 /* FacebookSDK.framework */; };
+		059E3762169DC0D0005E5E15 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 059E3761169DC0D0005E5E15 /* FacebookSDKResources.bundle */; };
+		059E3765169DC105005E5E15 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059E3763169DC105005E5E15 /* Accounts.framework */; };
+		059E3766169DC105005E5E15 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059E3764169DC105005E5E15 /* AdSupport.framework */; };
+		059E3768169DC10B005E5E15 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059E3767169DC10B005E5E15 /* Social.framework */; };
+		059E376A169DC9F4005E5E15 /* facebook_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 059E3769169DC9F3005E5E15 /* facebook_login.png */; };
+		05A2A52B169EF72F00944843 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A2A52A169EF72F00944843 /* Transaction.m */; };
+		05A2A52F169F050100944843 /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A2A52E169F050100944843 /* AddTransactionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		056E9C2B169DA76200BE97BB /* loan-shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "loan-shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05418D31169EF2EB0092372D /* TransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsViewController.h; sourceTree = "<group>"; };
+		05418D32169EF2EB0092372D /* TransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsViewController.m; sourceTree = "<group>"; };
+		056E9C2B169DA76200BE97BB /* Loan Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loan Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056E9C2F169DA76200BE97BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		056E9C31169DA76200BE97BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		056E9C33169DA76200BE97BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -42,14 +51,20 @@
 		056E9C45169DA76300BE97BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		056E9C48169DA76300BE97BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		056E9C4B169DA76300BE97BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		056E9C4D169DA76300BE97BB /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		056E9C4E169DA76300BE97BB /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		056E9C50169DA76300BE97BB /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		056E9C52169DA76300BE97BB /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		056E9C54169DA76300BE97BB /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		056E9C55169DA76300BE97BB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		056E9C57169DA76300BE97BB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		056E9C59169DA76300BE97BB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		059E375F169DC098005E5E15 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		059E3761169DC0D0005E5E15 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		059E3763169DC105005E5E15 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		059E3764169DC105005E5E15 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		059E3767169DC10B005E5E15 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		059E3769169DC9F3005E5E15 /* facebook_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_login.png; sourceTree = "<group>"; };
+		05A2A529169EF72F00944843 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		05A2A52A169EF72F00944843 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		05A2A52D169F050100944843 /* AddTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
+		05A2A52E169F050100944843 /* AddTransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,15 +72,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059E3768169DC10B005E5E15 /* Social.framework in Frameworks */,
+				059E3765169DC105005E5E15 /* Accounts.framework in Frameworks */,
+				059E3766169DC105005E5E15 /* AdSupport.framework in Frameworks */,
 				056E9C30169DA76200BE97BB /* UIKit.framework in Frameworks */,
 				056E9C32169DA76200BE97BB /* Foundation.framework in Frameworks */,
 				056E9C34169DA76200BE97BB /* CoreGraphics.framework in Frameworks */,
+				059E3760169DC098005E5E15 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05418D2D169EF18A0092372D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05418D31169EF2EB0092372D /* TransactionsViewController.h */,
+				05418D32169EF2EB0092372D /* TransactionsViewController.m */,
+				05A2A52D169F050100944843 /* AddTransactionViewController.h */,
+				05A2A52E169F050100944843 /* AddTransactionViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		05418D2E169EF1A00092372D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				059E3769169DC9F3005E5E15 /* facebook_login.png */,
+				056E9C50169DA76300BE97BB /* first.png */,
+				056E9C52169DA76300BE97BB /* first@2x.png */,
+				056E9C57169DA76300BE97BB /* second.png */,
+				056E9C59169DA76300BE97BB /* second@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		05418D2F169EF1B60092372D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05A2A529169EF72F00944843 /* Transaction.h */,
+				05A2A52A169EF72F00944843 /* Transaction.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		05418D30169EF1D10092372D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				056E9C47169DA76300BE97BB /* MainStoryboard_iPhone.storyboard */,
+				056E9C4A169DA76300BE97BB /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		056E9C20169DA76200BE97BB = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +138,7 @@
 		056E9C2C169DA76200BE97BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				056E9C2B169DA76200BE97BB /* loan-shark.app */,
+				056E9C2B169DA76200BE97BB /* Loan Shark.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +146,11 @@
 		056E9C2E169DA76200BE97BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				059E3767169DC10B005E5E15 /* Social.framework */,
+				059E3763169DC105005E5E15 /* Accounts.framework */,
+				059E3764169DC105005E5E15 /* AdSupport.framework */,
+				059E3761169DC0D0005E5E15 /* FacebookSDKResources.bundle */,
+				059E375F169DC098005E5E15 /* FacebookSDK.framework */,
 				056E9C2F169DA76200BE97BB /* UIKit.framework */,
 				056E9C31169DA76200BE97BB /* Foundation.framework */,
 				056E9C33169DA76200BE97BB /* CoreGraphics.framework */,
@@ -96,18 +161,12 @@
 		056E9C35169DA76200BE97BB /* loan-shark */ = {
 			isa = PBXGroup;
 			children = (
+				05418D30169EF1D10092372D /* Views */,
+				05418D2F169EF1B60092372D /* Models */,
+				05418D2E169EF1A00092372D /* Images */,
+				05418D2D169EF18A0092372D /* Controllers */,
 				056E9C3E169DA76300BE97BB /* AppDelegate.h */,
 				056E9C3F169DA76300BE97BB /* AppDelegate.m */,
-				056E9C47169DA76300BE97BB /* MainStoryboard_iPhone.storyboard */,
-				056E9C4A169DA76300BE97BB /* MainStoryboard_iPad.storyboard */,
-				056E9C4D169DA76300BE97BB /* FirstViewController.h */,
-				056E9C4E169DA76300BE97BB /* FirstViewController.m */,
-				056E9C50169DA76300BE97BB /* first.png */,
-				056E9C52169DA76300BE97BB /* first@2x.png */,
-				056E9C54169DA76300BE97BB /* SecondViewController.h */,
-				056E9C55169DA76300BE97BB /* SecondViewController.m */,
-				056E9C57169DA76300BE97BB /* second.png */,
-				056E9C59169DA76300BE97BB /* second@2x.png */,
 				056E9C36169DA76200BE97BB /* Supporting Files */,
 			);
 			path = "loan-shark";
@@ -130,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		056E9C2A169DA76200BE97BB /* loan-shark */ = {
+		056E9C2A169DA76200BE97BB /* Loan Shark */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 056E9C5D169DA76300BE97BB /* Build configuration list for PBXNativeTarget "loan-shark" */;
+			buildConfigurationList = 056E9C5D169DA76300BE97BB /* Build configuration list for PBXNativeTarget "Loan Shark" */;
 			buildPhases = (
 				056E9C27169DA76200BE97BB /* Sources */,
 				056E9C28169DA76200BE97BB /* Frameworks */,
@@ -142,9 +201,9 @@
 			);
 			dependencies = (
 			);
-			name = "loan-shark";
+			name = "Loan Shark";
 			productName = "loan-shark";
-			productReference = 056E9C2B169DA76200BE97BB /* loan-shark.app */;
+			productReference = 056E9C2B169DA76200BE97BB /* Loan Shark.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				056E9C2A169DA76200BE97BB /* loan-shark */,
+				056E9C2A169DA76200BE97BB /* Loan Shark */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +247,8 @@
 				056E9C53169DA76300BE97BB /* first@2x.png in Resources */,
 				056E9C58169DA76300BE97BB /* second.png in Resources */,
 				056E9C5A169DA76300BE97BB /* second@2x.png in Resources */,
+				059E3762169DC0D0005E5E15 /* FacebookSDKResources.bundle in Resources */,
+				059E376A169DC9F4005E5E15 /* facebook_login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +261,9 @@
 			files = (
 				056E9C3C169DA76200BE97BB /* main.m in Sources */,
 				056E9C40169DA76300BE97BB /* AppDelegate.m in Sources */,
-				056E9C4F169DA76300BE97BB /* FirstViewController.m in Sources */,
-				056E9C56169DA76300BE97BB /* SecondViewController.m in Sources */,
+				05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */,
+				05A2A52B169EF72F00944843 /* Transaction.m in Sources */,
+				05A2A52F169F050100944843 /* AddTransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +352,15 @@
 		056E9C5E169DA76300BE97BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "loan-shark/loan-shark-Prefix.pch";
 				INFOPLIST_FILE = "loan-shark/loan-shark-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -301,9 +369,15 @@
 		056E9C5F169DA76300BE97BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "loan-shark/loan-shark-Prefix.pch";
 				INFOPLIST_FILE = "loan-shark/loan-shark-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,13 +395,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		056E9C5D169DA76300BE97BB /* Build configuration list for PBXNativeTarget "loan-shark" */ = {
+		056E9C5D169DA76300BE97BB /* Build configuration list for PBXNativeTarget "Loan Shark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				056E9C5E169DA76300BE97BB /* Debug */,
 				056E9C5F169DA76300BE97BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

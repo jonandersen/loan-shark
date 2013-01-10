@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  LoginViewController.h
 //  loan-shark
 //
 //  Created by Jon Andersen on 1/9/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface LoginViewController : UIViewController
 
 @end
