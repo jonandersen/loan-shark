@@ -161,6 +161,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="amountField" destination="ven-Vu-ZlI" id="sXq-0L-vPl"/>
                         <outlet property="nameTextField" destination="TR4-SL-wFY" id="cui-jv-sEZ"/>
                     </connections>
                 </tableViewController>
@@ -251,6 +252,7 @@
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>

@@ -19,6 +19,7 @@
 
 @property (nonatomic, weak) id <AddTransactionViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *amountField;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
