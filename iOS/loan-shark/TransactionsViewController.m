@@ -77,6 +77,16 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"AddTransaction"])
+	{
+        UINavigationController *navigationController = [segue destinationViewController];
+        AddTransactionViewController *controller = (AddTransactionViewController *) navigationController;
+        controller.delegate = self;
+	}
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,6 +137,19 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+
+#pragma mark - PlayerDetailsViewControllerDelegate
+
+- (void)addTransactionViewControllerDidCancel:(AddTransactionViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addTransactionViewControllerDidSave:(AddTransactionViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

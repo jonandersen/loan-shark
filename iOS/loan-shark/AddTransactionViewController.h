@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AddTransactionViewController;
+
+@protocol AddTransactionViewControllerDelegate <NSObject>
+- (void)addTransactionViewControllerDidCancel:(AddTransactionViewController *)controller;
+- (void)addTransactionViewControllerDidSave:(AddTransactionViewController *)controller;
+@end
+
 
 @interface AddTransactionViewController : UITableViewController
 
+@property (nonatomic, weak) id <AddTransactionViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)done:(id)sender;
+
+
 @end
+
+
+

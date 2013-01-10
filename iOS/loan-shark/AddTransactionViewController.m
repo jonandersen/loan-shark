@@ -14,6 +14,9 @@
 
 @implementation AddTransactionViewController
 
+@synthesize delegate;
+@synthesize nameTextField;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -26,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNameTextField:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -64,6 +69,16 @@
     // Configure the cell...
     
     return cell;
+}
+*/
+
+- (IBAction)cancel:(id)sender
+{
+	[self.delegate addTransactionViewControllerDidCancel:self];
+}
+- (IBAction)done:(id)sender
+{
+	[self.delegate addTransactionViewControllerDidSave:self];
 }
 
 /*

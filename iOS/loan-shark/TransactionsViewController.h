@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Transaction.h"
+#import "AddTransactionViewController.h"
 
-@interface TransactionsViewController : UITableViewController
+@interface TransactionsViewController : UITableViewController <AddTransactionViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *transactions;
 
