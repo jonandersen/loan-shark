@@ -64,7 +64,10 @@
 }
 - (IBAction)done:(id)sender
 {
-	[self.delegate addTransactionViewControllerDidSave:self];
+    Transaction *transaction = [[Transaction alloc] init];
+	transaction.name = self.nameTextField.text;
+	transaction.amount = [self.amountField.text intValue];
+	[self.delegate addTransactionViewController:self didAddTransaction:transaction];
 }
 
 

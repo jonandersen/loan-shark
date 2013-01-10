@@ -147,8 +147,10 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)addTransactionViewControllerDidSave:(AddTransactionViewController *)controller
-{
+- (void)addTransactionViewController:(AddTransactionViewController *)controller didAddTransaction:(Transaction *)transaction{
+    [self.transactions addObject:transaction];
+	NSIndexPath *indexPath =  [NSIndexPath indexPathForRow:[self.transactions count] - 1 inSection:0];
+	[self.tableView insertRowsAtIndexPaths:  [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

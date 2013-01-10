@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Transaction.h"
+
 @class AddTransactionViewController;
 
 @protocol AddTransactionViewControllerDelegate <NSObject>
 - (void)addTransactionViewControllerDidCancel:(AddTransactionViewController *)controller;
-- (void)addTransactionViewControllerDidSave:(AddTransactionViewController *)controller;
+- (void)addTransactionViewController:(AddTransactionViewController *)controller didAddTransaction:(Transaction *)transaction;
 @end
 
 
