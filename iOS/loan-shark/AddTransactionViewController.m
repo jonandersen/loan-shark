@@ -17,6 +17,7 @@
 @synthesize delegate;
 @synthesize nameTextField;
 @synthesize amountField;
+@synthesize doneButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -50,19 +51,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section == 0){
+	if (indexPath.row == 0){
 		[self.nameTextField becomeFirstResponder];
-    }else if(indexPath.section == 1){
+    }else if(indexPath.row == 1){
         [self.amountField becomeFirstResponder];
     }
 }
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (IBAction)done:(id)sender {
+    [self.nameTextField resignFirstResponder];
+    [self.amountField resignFirstResponder];
+    [self.doneButton setEnabled:NO];
+}
+
+-(IBAction)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.doneButton setEnabled:YES];
+}
+
+-(IBAction)textFieldDidEndEditing:(UITextField *)textField {
+    [self.doneButton setEnabled:NO];
+}
+
 
 #pragma mark - Table view delegate
 - (IBAction)cancel:(id)sender
 {
 	[self.delegate addTransactionViewControllerDidCancel:self];
 }
-- (IBAction)done:(id)sender
+- (IBAction)create:(id)sender
 {
     Transaction *transaction = [[Transaction alloc] init];
 	transaction.name = self.nameTextField.text;
