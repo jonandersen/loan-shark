@@ -13,8 +13,12 @@
 @end
 
 @implementation FriendsTransactionViewController
+{
+	NSMutableArray *friends;
+    NSMutableArray *boolFriends;
+}
 
-@synthesize friends;
+@synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,14 +32,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.friends = [NSArray arrayWithObjects:
-             @"Angry Birds",
-             @"Chess",
-             @"Russian Roulette",
-             @"Spin the Bottle",
-             @"Texas Hold’em Poker",
-             @"Tic-Tac-Toe",
-             nil];
+    friends = [NSMutableArray arrayWithCapacity:4];
+    boolFriends = [NSMutableArray arrayWithCapacity:[friends count]];
+    [friends addObject:@"Simon Ekvy"];    
+    [friends addObject:@"Johan Anderholm"];
+    [friends addObject:@"Tony Meiner"];
+    [friends addObject:@"Marcus Carlberg"];
+    
+    [boolFriends addObject:[NSNumber numberWithBool:NO]];
+    [boolFriends addObject:[NSNumber numberWithBool:NO]];
+    [boolFriends addObject:[NSNumber numberWithBool:NO]];
+    [boolFriends addObject:[NSNumber numberWithBool:NO]];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -47,7 +54,7 @@
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
-	self.friends = nil;
+	friends = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +63,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -64,28 +70,43 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.friends count];
+	return [friends count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
-	cell.textLabel.text = [self.friends objectAtIndex:indexPath.row];
-	return cell;
+	cell.textLabel.text = [friends objectAtIndex:indexPath.row];
+    return cell;
 }
 
 
-#pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [boolFriends replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [boolFriends replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+    }
+	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
 }
 
+- (IBAction)done:(id)sender {
+    
+    NSMutableArray *selectedFriends = [NSMutableArray arrayWithCapacity:[friends count]];
+    for (int i = 0; i < [boolFriends count]; i++) {
+        if ([boolFriends[i] boolValue]) {
+            [selectedFriends addObject:friends[i]];
+        }
+    }
+
+    
+    [self.delegate friendsTransactionViewController:self didSelectFriends:selectedFriends];
+}
 @end

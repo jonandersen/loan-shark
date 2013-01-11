@@ -18,6 +18,8 @@
 @synthesize nameTextField;
 @synthesize amountField;
 @synthesize doneButton;
+@synthesize friendsField;
+@synthesize friends;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,11 +27,21 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	if ((self = [super initWithCoder:aDecoder]))
+	{
+		self.friends = [NSMutableArray arrayWithCapacity:20];
+	}
+	return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];
 
-    // Uncomment the following line to preserve selection between presentations.
+    // Uncomment the ollowing line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -42,6 +54,17 @@
     [self setAmountField:nil];
 	[super viewDidUnload];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"PickFriends"])
+	{
+		FriendsTransactionViewController *friendsTransactionVC = segue.destinationViewController;
+		friendsTransactionVC.delegate = self;
+        //friendsTransactionVC.game = game;
+	}
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -89,6 +112,13 @@
 	transaction.name = self.nameTextField.text;
 	transaction.amount = [self.amountField.text intValue];
 	[self.delegate addTransactionViewController:self didAddTransaction:transaction];
+}
+
+- (void)friendsTransactionViewController:(FriendsTransactionViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends
+{
+	self.friends = selectedFriends;
+	self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 

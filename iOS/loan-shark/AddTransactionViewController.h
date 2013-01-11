@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Transaction.h"
+#import "FriendsTransactionViewController.h"
 
 @class AddTransactionViewController;
 
@@ -16,13 +17,14 @@
 - (void)addTransactionViewController:(AddTransactionViewController *)controller didAddTransaction:(Transaction *)transaction;
 @end
 
-
-@interface AddTransactionViewController : UITableViewController
+@interface AddTransactionViewController : UITableViewController <FriendsTransactionViewControllerDelegate>
 
 @property (nonatomic, weak) id <AddTransactionViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *amountField;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (strong, nonatomic) IBOutlet UITableViewCell *friendsField;
+@property (nonatomic, strong) NSMutableArray *friends;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)create:(id)sender;

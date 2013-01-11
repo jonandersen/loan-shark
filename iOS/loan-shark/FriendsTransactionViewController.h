@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class FriendsTransactionViewController;
+
+@protocol FriendsTransactionViewControllerDelegate <NSObject>
+- (void)friendsTransactionViewController:(FriendsTransactionViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends;
+@end
+
 @interface FriendsTransactionViewController : UITableViewController
-    @property (nonatomic, strong) NSArray * friends;
+@property (nonatomic, weak) id <FriendsTransactionViewControllerDelegate> delegate;
+- (IBAction)done:(id)sender;
 @end
 
 

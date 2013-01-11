@@ -138,7 +138,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="DfE-hV-qTJ" kind="push" id="O3I-yj-zXZ"/>
+                                            <segue destination="DfE-hV-qTJ" kind="push" identifier="PickFriends" id="O3I-yj-zXZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -200,6 +200,7 @@
                     <connections>
                         <outlet property="amountField" destination="ven-Vu-ZlI" id="sXq-0L-vPl"/>
                         <outlet property="doneButton" destination="gyj-EB-xvE" id="qSF-dM-y0I"/>
+                        <outlet property="friendsField" destination="gLq-Hz-yvo" id="gZe-RW-DPA"/>
                         <outlet property="nameTextField" destination="TR4-SL-wFY" id="cui-jv-sEZ"/>
                     </connections>
                 </tableViewController>
@@ -246,7 +247,13 @@
                             <outlet property="delegate" destination="DfE-hV-qTJ" id="edp-Ml-aXz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Friends" id="3sv-A1-5E4"/>
+                    <navigationItem key="navigationItem" title="Select Friends" id="3sv-A1-5E4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="h9b-kV-obM">
+                            <connections>
+                                <action selector="done:" destination="DfE-hV-qTJ" id="L3p-kP-saY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu3-h1-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,11 +348,15 @@
                 <relationship kind="action" name="textFieldReturn:"/>
                 <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="friendsField" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="FriendsTransactionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsTransactionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
