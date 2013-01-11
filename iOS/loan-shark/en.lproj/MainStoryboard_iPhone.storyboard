@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Transactions" id="rr2-tI-Zho">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UT1-Os-epW">
                             <connections>
-                                <segue destination="Fn3-aJ-viS" kind="modal" identifier="AddTransaction" modalTransitionStyle="coverVertical" id="BLc-u1-JpU"/>
+                                <segue destination="SzG-MS-sZW" kind="modal" identifier="AddTransaction" id="nvw-Ia-1oC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -48,37 +48,19 @@
             </objects>
             <point key="canvasLocation" x="1140" y="-176"/>
         </scene>
-        <!--Add Transaction View Controller-->
+        <!--Add Transaction View Controller - Add Transaction-->
         <scene sceneID="iEO-Ck-1MF">
             <objects>
                 <tableViewController id="Fn3-aJ-viS" customClass="AddTransactionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Z7V-oi-zea">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="56O-ar-MK3">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Add transaction" id="1ni-04-bzr">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="o03-Qe-aPL">
-                                        <connections>
-                                            <action selector="cancel:" destination="Fn3-aJ-viS" id="ol9-gE-L3O"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="gyj-EB-xvE">
-                                        <connections>
-                                            <action selector="done:" destination="Fn3-aJ-viS" id="TgS-jP-MBF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <sections>
                             <tableViewSection id="bMs-3V-GEX">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6BT-TQ-1oc">
-                                        <rect key="frame" x="0.0" y="54" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -106,7 +88,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="esn-ed-26I">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -134,14 +116,14 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Rxz-Jc-pI9" detailTextLabel="hIc-aL-18s" style="IBUITableViewCellStyleValue1" id="gLq-Hz-yvo">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Participants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rxz-Jc-pI9">
-                                                    <rect key="frame" x="10" y="11" width="98" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rxz-Jc-pI9">
+                                                    <rect key="frame" x="10" y="11" width="62" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,13 +137,16 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="DfE-hV-qTJ" kind="push" id="O3I-yj-zXZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="C3r-dA-0k7">
                                 <cells>
                                     <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="HjO-hH-0cc">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="164" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -180,7 +165,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="create:" destination="Fn3-aJ-viS" eventType="touchUpInside" id="aXe-OL-e6u"/>
+                                                        <action selector="create:" destination="Fn3-aJ-viS" eventType="touchUpInside" id="OCV-Es-Rux"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -200,6 +185,18 @@
                             <outlet property="delegate" destination="Fn3-aJ-viS" id="cDV-rd-h90"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Transaction" id="Ba7-mL-RtZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="o03-Qe-aPL">
+                            <connections>
+                                <action selector="cancel:" destination="Fn3-aJ-viS" id="mVt-xI-zyw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="gyj-EB-xvE">
+                            <connections>
+                                <action selector="done:" destination="Fn3-aJ-viS" id="TgS-jP-MBF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="amountField" destination="ven-Vu-ZlI" id="sXq-0L-vPl"/>
                         <outlet property="doneButton" destination="gyj-EB-xvE" id="qSF-dM-y0I"/>
@@ -208,7 +205,52 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0U-Xi-22Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592" y="-181"/>
+            <point key="canvasLocation" x="2072" y="-176"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lki-qc-x9f">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="SzG-MS-sZW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P7Q-wR-5eQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Fn3-aJ-viS" kind="relationship" relationship="rootViewController" id="K3m-Y5-HMP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meN-lD-hyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="-176"/>
+        </scene>
+        <!--Friends Transaction View Controller - Select Friends-->
+        <scene sceneID="yrD-lT-Vwr">
+            <objects>
+                <tableViewController id="DfE-hV-qTJ" customClass="FriendsTransactionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="n1Q-jc-MbE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" id="4By-k2-xfn">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DfE-hV-qTJ" id="AEe-yM-N6c"/>
+                            <outlet property="delegate" destination="DfE-hV-qTJ" id="edp-Ml-aXz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select Friends" id="3sv-A1-5E4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qu3-h1-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2544" y="-176"/>
         </scene>
         <!--Navigation Controller - Transactions-->
         <scene sceneID="xo8-ua-Oa7">
@@ -301,6 +343,9 @@
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="FriendsTransactionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsTransactionViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

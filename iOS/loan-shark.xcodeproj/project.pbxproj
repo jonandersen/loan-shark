@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053F055D169FD2D900F2E8FB /* FriendsTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */; };
 		05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05418D32169EF2EB0092372D /* TransactionsViewController.m */; };
 		056E9C30169DA76200BE97BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C2F169DA76200BE97BB /* UIKit.framework */; };
 		056E9C32169DA76200BE97BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C31169DA76200BE97BB /* Foundation.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053F055B169FD2D900F2E8FB /* FriendsTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTransactionViewController.h; sourceTree = "<group>"; };
+		053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTransactionViewController.m; sourceTree = "<group>"; };
 		05418D31169EF2EB0092372D /* TransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsViewController.h; sourceTree = "<group>"; };
 		05418D32169EF2EB0092372D /* TransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsViewController.m; sourceTree = "<group>"; };
 		056E9C2B169DA76200BE97BB /* Loan Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loan Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +95,8 @@
 				05418D32169EF2EB0092372D /* TransactionsViewController.m */,
 				05A2A52D169F050100944843 /* AddTransactionViewController.h */,
 				05A2A52E169F050100944843 /* AddTransactionViewController.m */,
+				053F055B169FD2D900F2E8FB /* FriendsTransactionViewController.h */,
+				053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */,
 				05A2A52B169EF72F00944843 /* Transaction.m in Sources */,
 				05A2A52F169F050100944843 /* AddTransactionViewController.m in Sources */,
+				053F055D169FD2D900F2E8FB /* FriendsTransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
