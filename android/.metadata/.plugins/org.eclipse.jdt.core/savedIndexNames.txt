@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+/home/simon/Dev/loan-shark/android/.metadata/.plugins/org.eclipse.jdt.core
+1439833684.index
+2094215952.index
+3325821407.index
