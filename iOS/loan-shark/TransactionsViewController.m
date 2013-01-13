@@ -114,23 +114,23 @@
 	Transaction *transaction = [self.transactions objectAtIndex:indexPath.row];
 	cell.textLabel.text = transaction.name;
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", transaction.amount];
-//    if(indexPath.row == [self.transactions count] - 1)
-//    {
-//        CALayer* shadow = [self createShadowWithFrame:CGRectMake(0, 67, 320, 5)];
-//        
-//        [cell.layer addSublayer:shadow];
-//    }
     return cell;
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([segue.identifier isEqualToString:@"AddTransaction"])
+	if ([segue.identifier isEqualToString:@"AddTransaction"] || [segue.identifier isEqualToString:@"EditTransaction"])
 	{
         UINavigationController *navigationController = [segue destinationViewController];
         AddTransactionViewController *controller = [[navigationController viewControllers] objectAtIndex:0];
         controller.delegate = self;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        Transaction *transaction = nil;
+        if(path){
+            transaction = [self.transactions objectAtIndex:path.row];
+        }
+        controller.transaction = transaction;
 	}
 }
 
@@ -142,10 +142,13 @@
 }
 
 - (void)addTransactionViewController:(AddTransactionViewController *)controller didAddTransaction:(Transaction *)transaction{
-    [self.transactions addObject:transaction];
-	NSIndexPath *indexPath =  [NSIndexPath indexPathForRow:[self.transactions count] - 1 inSection:0];
-	[self.tableView insertRowsAtIndexPaths:  [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-	[self dismissViewControllerAnimated:YES completion:nil];
+    if(transaction){
+        [self.transactions addObject:transaction];
+        NSIndexPath *indexPath =  [NSIndexPath indexPathForRow:[self.transactions count] - 1 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:  [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -18,11 +18,9 @@
 @synthesize nameTextField;
 @synthesize amountField;
 @synthesize doneButton;
+@synthesize createButton;
 @synthesize friendsField;
 @synthesize friends;
-@synthesize tableView;
-@synthesize transaction;
-@synthesize createButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,23 +40,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[tableView setSeparatorColor:[UIColor clearColor]];
     self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];
     
-    UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
-    [self.view setBackgroundColor:bgColor];
-    if(self.transaction){
-        self.nameTextField.text = self.transaction.name;
-        self.amountField.text = [NSString stringWithFormat:@"%d",self.transaction.amount];
-        [self.createButton setTitle:@"Save" forState:UIControlStateNormal];
-    }  
+    UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"orangeButtonHighlight.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    // Set the background for any states you plan to use
+    [self.createButton setBackgroundImage:buttonImage forState:UIControlStateNormal]    ;
+    [self.createButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
 }
 
 - (void)viewDidUnload
 {
     [self setNameTextField:nil];
     [self setAmountField:nil];
-    self.transaction = nil;
 	[super viewDidUnload];
 }
 
@@ -88,16 +84,6 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == 1){
-        cell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-        cell.backgroundColor = [UIColor clearColor];
-        //cell.backgroundView.backgroundColor = [UIColor clearColor];
-    }
-}
-
-
 -(IBAction)textFieldReturn:(id)sender
 {
     [sender resignFirstResponder];
@@ -125,17 +111,10 @@
 }
 - (IBAction)create:(id)sender
 {
-    if(self.transaction){
-        self.transaction.name = self.nameTextField.text;
-        self.transaction.amount = [self.amountField.text intValue];
-        [self.delegate addTransactionViewController:self didAddTransaction:nil];
-    }else{
-        self.transaction = [[Transaction alloc] init];
-        self.transaction.name = self.nameTextField.text;
-        self.transaction.amount = [self.amountField.text intValue];
-        [self.delegate addTransactionViewController:self didAddTransaction:transaction];
-    }
-
+    Transaction *transaction = [[Transaction alloc] init];
+	transaction.name = self.nameTextField.text;
+	transaction.amount = [self.amountField.text intValue];
+	[self.delegate addTransactionViewController:self didAddTransaction:transaction];
 }
 
 - (void)friendsTransactionViewController:(FriendsTransactionViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends

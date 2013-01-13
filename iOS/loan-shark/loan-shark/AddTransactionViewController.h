@@ -25,8 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (strong, nonatomic) IBOutlet UITableViewCell *friendsField;
 @property (nonatomic, strong) NSMutableArray *friends;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) Transaction *transaction;
 @property (strong, nonatomic) IBOutlet UIButton *createButton;
 
 - (IBAction)cancel:(id)sender;
