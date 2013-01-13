@@ -13,5 +13,6 @@
 @interface TransactionsViewController : UITableViewController <AddTransactionViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *transactions;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

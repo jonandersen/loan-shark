@@ -43,6 +43,11 @@
     [boolFriends addObject:[NSNumber numberWithBool:NO]];
     [boolFriends addObject:[NSNumber numberWithBool:NO]];
     [boolFriends addObject:[NSNumber numberWithBool:NO]];
+    
+    
+    UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
+    [self.view setBackgroundColor:bgColor];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

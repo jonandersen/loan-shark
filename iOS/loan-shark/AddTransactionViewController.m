@@ -20,6 +20,7 @@
 @synthesize doneButton;
 @synthesize friendsField;
 @synthesize friends;
+@synthesize tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,13 +40,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[tableView setSeparatorColor:[UIColor clearColor]];
     self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];
-
-    // Uncomment the ollowing line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
+    [self.view setBackgroundColor:bgColor];
+    
 }
 
 - (void)viewDidUnload
@@ -80,6 +80,16 @@
         [self.amountField becomeFirstResponder];
     }
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1){
+        cell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+        cell.backgroundColor = [UIColor clearColor];
+        //cell.backgroundView.backgroundColor = [UIColor clearColor];
+    }
+}
+
 
 -(IBAction)textFieldReturn:(id)sender
 {

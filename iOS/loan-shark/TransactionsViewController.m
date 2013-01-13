@@ -7,6 +7,8 @@
 //
 
 #import "TransactionsViewController.h"
+#import "MasterCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TransactionsViewController ()
 
@@ -15,6 +17,7 @@
 @implementation TransactionsViewController
 
 @synthesize transactions;
+@synthesize tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,6 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    CALayer* shadowLayer = [self createShadowWithFrame:CGRectMake(0, 0, 320, 5)];
+    
+    [self.view.layer addSublayer:shadowLayer];
+    
     self.transactions = [NSMutableArray arrayWithCapacity:20];
     Transaction *tr = [[Transaction alloc] init];
     tr.name = @"Lunch";
@@ -38,6 +47,14 @@
     tr.name = @"Dinner";
     tr.amount = 200;
     [self.transactions addObject:tr];
+    
+    CALayer * shadow = [self createShadowWithFrame:CGRectMake(0, 0, 320, 5)];
+    [self.tableView.layer addSublayer:shadow];
+    
+    UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
+    [self.view setBackgroundColor:bgColor];
+ 
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,6 +68,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(CALayer *)createShadowWithFrame:(CGRect)frame
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = frame;
+    
+    
+    UIColor* lightColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+    UIColor* darkColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    
+    gradient.colors = [NSArray arrayWithObjects:(id)darkColor.CGColor, (id)lightColor.CGColor, nil];
+    
+    return gradient;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 67;
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -66,13 +105,21 @@
     return [self.transactions count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transaction"];
+    MasterCell *cell = (MasterCell *)[self.tableView dequeueReusableCellWithIdentifier:@"transaction"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	Transaction *transaction = [self.transactions objectAtIndex:indexPath.row];
 	cell.textLabel.text = transaction.name;
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", transaction.amount];
+//    if(indexPath.row == [self.transactions count] - 1)
+//    {
+//        CALayer* shadow = [self createShadowWithFrame:CGRectMake(0, 67, 320, 5)];
+//        
+//        [cell.layer addSublayer:shadow];
+//    }
     return cell;
 }
 

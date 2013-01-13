@@ -8,16 +8,16 @@
         <scene sceneID="9Ek-Th-ar4">
             <objects>
                 <tableViewController id="Ma4-he-kAq" customClass="TransactionsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5wX-ai-uxx">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5wX-ai-uxx">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transaction" textLabel="DSY-bq-loL" detailTextLabel="Kgn-JY-mw3" style="IBUITableViewCellStyleSubtitle" id="cJs-O9-gxM">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSY-bq-loL">
@@ -43,6 +43,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5wX-ai-uxx" id="w4E-We-YGg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0J-wG-Bqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,11 +58,11 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Z7V-oi-zea">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="bMs-3V-GEX">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6BT-TQ-1oc">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6BT-TQ-1oc">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -87,7 +90,7 @@
                                             <constraint firstItem="TR4-SL-wFY" firstAttribute="leading" secondItem="6BT-TQ-1oc" secondAttribute="leading" constant="23" id="adi-kN-b5B"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="esn-ed-26I">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="esn-ed-26I">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -115,7 +118,7 @@
                                             <constraint firstItem="ven-Vu-ZlI" firstAttribute="centerY" secondItem="esn-ed-26I" secondAttribute="centerY" type="default" id="cRD-o4-cnK"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Rxz-Jc-pI9" detailTextLabel="hIc-aL-18s" style="IBUITableViewCellStyleValue1" id="gLq-Hz-yvo">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Rxz-Jc-pI9" detailTextLabel="hIc-aL-18s" style="IBUITableViewCellStyleValue1" id="gLq-Hz-yvo">
                                         <rect key="frame" x="0.0" y="99" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -152,13 +155,14 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-tt-Hi0">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-tt-Hi0">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="LKc-YB-URj"/>
+                                                        <constraint firstAttribute="width" constant="300" id="SF5-zy-FdR"/>
+                                                        <constraint firstAttribute="height" constant="46" id="an1-ky-BZE"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Create">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                    <state key="normal" title="Create" backgroundImage="ipad-button-blue.png">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <state key="highlighted">
@@ -172,9 +176,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="ZdV-tt-Hi0" firstAttribute="centerY" secondItem="HjO-hH-0cc" secondAttribute="centerY" type="default" id="DK0-yu-lRc"/>
-                                            <constraint firstItem="ZdV-tt-Hi0" firstAttribute="centerX" secondItem="HjO-hH-0cc" secondAttribute="centerX" type="default" id="Dg2-RY-Ec9"/>
-                                            <constraint firstItem="ZdV-tt-Hi0" firstAttribute="bottom" secondItem="HjO-hH-0cc" secondAttribute="bottom" type="default" id="Uom-SC-hA5"/>
+                                            <constraint firstItem="ZdV-tt-Hi0" firstAttribute="centerX" secondItem="HjO-hH-0cc" secondAttribute="centerX" type="default" id="Y7P-Kf-jXV"/>
+                                            <constraint firstItem="ZdV-tt-Hi0" firstAttribute="top" secondItem="HjO-hH-0cc" secondAttribute="top" constant="1" id="uY2-NL-cNf"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -202,6 +205,7 @@
                         <outlet property="doneButton" destination="gyj-EB-xvE" id="qSF-dM-y0I"/>
                         <outlet property="friendsField" destination="gLq-Hz-yvo" id="gZe-RW-DPA"/>
                         <outlet property="nameTextField" destination="TR4-SL-wFY" id="cui-jv-sEZ"/>
+                        <outlet property="tableView" destination="Z7V-oi-zea" id="54A-u7-yDg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0U-Xi-22Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,11 +263,26 @@
             </objects>
             <point key="canvasLocation" x="2544" y="-176"/>
         </scene>
-        <!--Navigation Controller - Transactions-->
+        <!--View Controller - Item-->
+        <scene sceneID="QrD-PW-HmF">
+            <objects>
+                <viewController id="UJS-ac-AMo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w1y-0H-9fh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="tab-icon3.png" id="DOP-Ou-J8k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1UM-6S-8Oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="-1289"/>
+        </scene>
+        <!--Navigation Controller - Lend-->
         <scene sceneID="xo8-ua-Oa7">
             <objects>
                 <navigationController definesPresentationContext="YES" id="YJC-V7-o34" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transactions" id="du9-pi-ivN"/>
+                    <tabBarItem key="tabBarItem" title="Lend" image="tab-icon4.png" id="du9-pi-ivN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Rm-d6-yqs">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -279,41 +298,6 @@
             </objects>
             <point key="canvasLocation" x="653" y="-176"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="BCF-kd-Ca5">
-            <objects>
-                <viewController id="5eD-KQ-1sA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VIN-Lp-uH5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="facebook_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-1A-fJ1"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loan Shark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv9-fh-OC6">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="Uva-n8-Hhn"/>
-                                    <constraint firstAttribute="width" constant="211" id="vXy-g8-m4r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="USF-qw-Wdc"/>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Lcn-1A-fJ1" firstAttribute="centerY" secondItem="VIN-Lp-uH5" secondAttribute="centerY" type="default" id="JtX-dc-9iw"/>
-                            <constraint firstItem="yv9-fh-OC6" firstAttribute="leading" secondItem="VIN-Lp-uH5" secondAttribute="leading" constant="82" id="KmV-8c-eW8"/>
-                            <constraint firstItem="yv9-fh-OC6" firstAttribute="top" secondItem="VIN-Lp-uH5" secondAttribute="top" constant="29" id="bnm-dR-9fe"/>
-                            <constraint firstItem="Lcn-1A-fJ1" firstAttribute="centerX" secondItem="VIN-Lp-uH5" secondAttribute="centerX" type="default" id="c2W-wh-v6D"/>
-                            <constraint firstItem="USF-qw-Wdc" firstAttribute="centerX" secondItem="Lcn-1A-fJ1" secondAttribute="centerX" type="default" id="flF-7Z-4hU"/>
-                            <constraint firstAttribute="bottom" secondItem="USF-qw-Wdc" secondAttribute="bottom" constant="135" id="zT7-0A-44K"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c6Z-9w-Z39" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-408" y="158"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
@@ -326,15 +310,52 @@
                     </tabBar>
                     <connections>
                         <segue destination="YJC-V7-o34" kind="relationship" relationship="viewControllers" id="zuw-GY-6Jj"/>
+                        <segue destination="Ao7-ZM-NtB" kind="relationship" relationship="viewControllers" id="unL-eq-cys"/>
+                        <segue destination="0Bt-Z8-0ox" kind="relationship" relationship="viewControllers" id="kNN-FF-MI4"/>
+                        <segue destination="UJS-ac-AMo" kind="relationship" relationship="viewControllers" id="prH-57-l2m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="158"/>
         </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="Vt4-d0-odd">
+            <objects>
+                <viewController id="Ao7-ZM-NtB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c0E-ae-ZCV">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="tab-icon1.png" id="mpg-oh-5it"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pF-tU-u0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="563"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="ckY-aP-ArE">
+            <objects>
+                <viewController id="0Bt-Z8-0ox" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cj7-wR-A9h">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="tab-icon2.png" id="x3u-SM-4Qc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxv-Op-v4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="1083"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="facebook_login.png" width="169" height="30"/>
+        <image name="ipad-button-blue.png" width="157" height="49"/>
+        <image name="tab-icon1.png" width="27" height="31"/>
+        <image name="tab-icon2.png" width="27" height="28"/>
+        <image name="tab-icon3.png" width="33" height="36"/>
+        <image name="tab-icon4.png" width="31" height="31"/>
     </resources>
     <classes>
         <class className="AddTransactionViewController" superclassName="UITableViewController">
@@ -350,6 +371,7 @@
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="friendsField" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="FriendsTransactionViewController" superclassName="UITableViewController">
@@ -363,6 +385,9 @@
         </class>
         <class className="TransactionsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TransactionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
