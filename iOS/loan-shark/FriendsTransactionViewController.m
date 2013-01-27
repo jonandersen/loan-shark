@@ -68,6 +68,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        
+        NSMutableArray *selectedFriends = [NSMutableArray arrayWithCapacity:[friends count]];
+        for (int i = 0; i < [boolFriends count]; i++) {
+            if ([boolFriends[i] boolValue]) {
+                [selectedFriends addObject:friends[i]];
+            }
+        }
+        
+        
+        [self.delegate friendsTransactionViewController:self didSelectFriends:selectedFriends];
+    }
+    [super viewWillDisappear:animated];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -102,16 +118,4 @@
 	
 }
 
-- (IBAction)done:(id)sender {
-    
-    NSMutableArray *selectedFriends = [NSMutableArray arrayWithCapacity:[friends count]];
-    for (int i = 0; i < [boolFriends count]; i++) {
-        if ([boolFriends[i] boolValue]) {
-            [selectedFriends addObject:friends[i]];
-        }
-    }
-
-    
-    [self.delegate friendsTransactionViewController:self didSelectFriends:selectedFriends];
-}
 @end

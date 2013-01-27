@@ -7,7 +7,7 @@
 //
 
 #import "TransactionsViewController.h"
-#import "MasterCell.h"
+#import "TransactionCell.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface TransactionsViewController ()
@@ -37,16 +37,7 @@
     
     [self.view.layer addSublayer:shadowLayer];
     
-    self.transactions = [NSMutableArray arrayWithCapacity:20];
-    Transaction *tr = [[Transaction alloc] init];
-    tr.name = @"Lunch";
-    tr.amount = 10;
-    [self.transactions addObject:tr];
-    
-    tr = [[Transaction alloc] init];
-    tr.name = @"Dinner";
-    tr.amount = 200;
-    [self.transactions addObject:tr];
+    self.transactions = [NSMutableArray arrayWithArray:[Transaction findAll]];
     
     CALayer * shadow = [self createShadowWithFrame:CGRectMake(0, 0, 320, 5)];
     [self.tableView.layer addSublayer:shadow];
@@ -109,11 +100,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MasterCell *cell = (MasterCell *)[self.tableView dequeueReusableCellWithIdentifier:@"transaction"];
+    TransactionCell *cell = (TransactionCell *)[self.tableView dequeueReusableCellWithIdentifier:@"transaction"];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	Transaction *transaction = [self.transactions objectAtIndex:indexPath.row];
-	cell.textLabel.text = transaction.name;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", transaction.amount];
+	cell.titleLabel.text = transaction.name;
+	cell.textLabel.text = [NSString stringWithFormat:@"%@", transaction.amount];
     return cell;
 }
 

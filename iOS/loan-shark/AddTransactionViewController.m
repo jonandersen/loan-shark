@@ -49,7 +49,7 @@
     [self.view setBackgroundColor:bgColor];
     if(self.transaction){
         self.nameTextField.text = self.transaction.name;
-        self.amountField.text = [NSString stringWithFormat:@"%d",self.transaction.amount];
+        self.amountField.text = [NSString stringWithFormat:@"%@",self.transaction.amount];
         [self.createButton setTitle:@"Save" forState:UIControlStateNormal];
     }  
 }
@@ -61,6 +61,7 @@
     self.transaction = nil;
 	[super viewDidUnload];
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -127,15 +128,16 @@
 {
     if(self.transaction){
         self.transaction.name = self.nameTextField.text;
-        self.transaction.amount = [self.amountField.text intValue];
+        self.transaction.amount = [NSDecimalNumber decimalNumberWithString:self.amountField.text];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
         [self.delegate addTransactionViewController:self didAddTransaction:nil];
     }else{
-        self.transaction = [[Transaction alloc] init];
+        self.transaction = [Transaction createEntity];
         self.transaction.name = self.nameTextField.text;
-        self.transaction.amount = [self.amountField.text intValue];
+        self.transaction.amount = [NSDecimalNumber decimalNumberWithString:self.amountField.text];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
         [self.delegate addTransactionViewController:self didAddTransaction:transaction];
     }
-
 }
 
 - (void)friendsTransactionViewController:(FriendsTransactionViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends

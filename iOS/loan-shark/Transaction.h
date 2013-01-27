@@ -2,15 +2,17 @@
 //  Transaction.h
 //  loan-shark
 //
-//  Created by Jon Andersen on 1/10/13.
+//  Created by Jon Andersen on 1/27/13.
 //  Copyright (c) 2013 Crowdme. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Transaction : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) int amount;
+@interface Transaction : NSManagedObject
+
+@property (nonatomic, retain) NSDecimalNumber * amount;
+@property (nonatomic, retain) NSString * name;
 
 @end

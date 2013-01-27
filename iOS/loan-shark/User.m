@@ -1,17 +1,18 @@
 //
-//  Transaction.m
+//  User.m
 //  loan-shark
 //
 //  Created by Jon Andersen on 1/27/13.
 //  Copyright (c) 2013 Crowdme. All rights reserved.
 //
 
-#import "Transaction.h"
+#import "User.h"
 
 
-@implementation Transaction
+@implementation User
 
-@dynamic amount;
-@dynamic name;
+@dynamic email;
+@dynamic firstname;
+@dynamic lastname;
 
 @end

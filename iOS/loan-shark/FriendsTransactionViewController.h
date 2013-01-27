@@ -16,7 +16,6 @@
 
 @interface FriendsTransactionViewController : UITableViewController
 @property (nonatomic, weak) id <FriendsTransactionViewControllerDelegate> delegate;
-- (IBAction)done:(id)sender;
 @end
 
 
