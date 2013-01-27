@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="1140" y="-176"/>
         </scene>
-        <!--Friends View Controller - Root View Controller-->
+        <!--Friends View Controller - Friend List-->
         <scene sceneID="Tj5-ze-Upu">
             <objects>
                 <tableViewController id="UqH-HF-W7v" customClass="FriendsViewController" sceneMemberID="viewController">
@@ -135,10 +135,10 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="O0C-vH-zt5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="COB-1M-w6v">
+                    <navigationItem key="navigationItem" title="Friend List" id="O0C-vH-zt5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="EbZ-64-3jc">
                             <connections>
-                                <segue destination="x1P-WA-9di" kind="modal" id="9vk-D3-hQJ"/>
+                                <segue destination="DfE-hV-qTJ" kind="push" identifier="PickFriends" id="Iua-f3-1H0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,50 +325,6 @@
             </objects>
             <point key="canvasLocation" x="2072" y="-176"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
-        <scene sceneID="0fg-xK-ywI">
-            <objects>
-                <tableViewController id="CEL-rm-n9k" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NWV-wm-Zka">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XFg-yJ-Bi0">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Znr-eo-nyt">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="LSK-DW-xXW"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="75h-fA-QOa"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="USl-uE-no5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2153" y="512"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="24Q-f7-sdy">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="x1P-WA-9di" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JL3-f5-4EA">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="CEL-rm-n9k" kind="relationship" relationship="rootViewController" id="Kcw-hm-pVU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A90-2X-FPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1619" y="512"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lki-qc-x9f">
             <objects>
@@ -384,12 +340,12 @@
             </objects>
             <point key="canvasLocation" x="1674" y="-176"/>
         </scene>
-        <!--Friends Transaction View Controller - Select Friends-->
+        <!--Friend Picker View Controller - Select Friends-->
         <scene sceneID="yrD-lT-Vwr">
             <objects>
-                <tableViewController id="DfE-hV-qTJ" customClass="FriendsTransactionViewController" sceneMemberID="viewController">
+                <tableViewController id="DfE-hV-qTJ" customClass="FriendPickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="n1Q-jc-MbE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -412,7 +368,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu3-h1-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544" y="-176"/>
+            <point key="canvasLocation" x="2500" y="430"/>
         </scene>
         <!--View Controller - Item-->
         <scene sceneID="QrD-PW-HmF">
@@ -540,11 +496,8 @@
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="FriendsTransactionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsTransactionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-            </relationships>
+        <class className="FriendPickerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendPickerViewController.h"/>
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
@@ -576,5 +529,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="N3f-eU-p1A"/>
+        <segue reference="Iua-f3-1H0"/>
     </inferredMetricsTieBreakers>
 </document>

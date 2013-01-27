@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Transaction.h"
-#import "FriendsTransactionViewController.h"
+#import "FriendPickerViewController.h"
 
 @class AddTransactionViewController;
 
@@ -17,7 +17,7 @@
 - (void)addTransactionViewController:(AddTransactionViewController *)controller didAddTransaction:(Transaction *)transaction;
 @end
 
-@interface AddTransactionViewController : UITableViewController <FriendsTransactionViewControllerDelegate>
+@interface AddTransactionViewController : UITableViewController <FriendPickerViewControllerDelegate>
 
 @property (nonatomic, weak) id <AddTransactionViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;

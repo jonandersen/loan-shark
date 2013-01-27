@@ -67,9 +67,8 @@
 {
 	if ([segue.identifier isEqualToString:@"PickFriends"])
 	{
-		FriendsTransactionViewController *friendsTransactionVC = segue.destinationViewController;
+		FriendPickerViewController *friendsTransactionVC = segue.destinationViewController;
 		friendsTransactionVC.delegate = self;
-        //friendsTransactionVC.game = game;
 	}
 }
 
@@ -94,7 +93,6 @@
     if(indexPath.section == 1){
         cell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         cell.backgroundColor = [UIColor clearColor];
-        //cell.backgroundView.backgroundColor = [UIColor clearColor];
     }
 }
 
@@ -140,7 +138,7 @@
     }
 }
 
-- (void)friendsTransactionViewController:(FriendsTransactionViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends
+- (void)friendPickerViewController:(FriendPickerViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends
 {
 	self.friends = selectedFriends;
 	self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];

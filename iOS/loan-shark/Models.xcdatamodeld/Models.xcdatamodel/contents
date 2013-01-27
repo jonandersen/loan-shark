@@ -8,9 +8,10 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friend" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friend" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="User" positionX="171" positionY="189" width="128" height="103"/>
         <element name="Transaction" positionX="369" positionY="198" width="128" height="73"/>
     </elements>
 </model>

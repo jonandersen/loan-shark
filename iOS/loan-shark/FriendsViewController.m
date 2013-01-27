@@ -9,6 +9,7 @@
 #import "FriendsViewController.h"
 #import "FriendCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "User.h"
 
 @interface FriendsViewController ()
 
@@ -17,7 +18,6 @@
 @implementation FriendsViewController
 {
 	NSMutableArray *friends;
-    NSMutableArray *boolFriends;
 }
 
 
@@ -33,18 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    friends = [NSMutableArray arrayWithCapacity:4];
-    boolFriends = [NSMutableArray arrayWithCapacity:[friends count]];
-    [friends addObject:@"Simon Ekvy"];
-    [friends addObject:@"Johan Anderholm"];
-    [friends addObject:@"Tony Meiner"];
-    [friends addObject:@"Marcus Carlberg"];
-    
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    
+    //friends =
     
     UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
     [self.view setBackgroundColor:bgColor];
@@ -77,6 +66,16 @@
     return 67;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"PickFriends"])
+	{
+		FriendPickerViewController *friendPickerVC = segue.destinationViewController;
+		friendPickerVC.delegate = self;
+        friendPickerVC.friends = [NSMutableArray arrayWithArray:[User findAll]];
+	}
+}
+
 
 
 #pragma mark - Table view data source
@@ -99,9 +98,16 @@
     
     FriendCell *cell = (FriendCell *)[self.tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-	NSString *friend = [friends objectAtIndex:indexPath.row];
-	cell.titleLabel.text = friend;
+	User *friend = [friends objectAtIndex:indexPath.row];
+	cell.titleLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstname, friend.lastname];
     return cell;
+}
+
+- (void)friendPickerViewController:(FriendPickerViewController *)controller didSelectFriends:(NSMutableArray *)selectedFriends
+{
+	//self.friends = selectedFriends;
+	//self.friendsField.detailTextLabel.text =  [NSString stringWithFormat:@"%d",[self.friends count]];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 

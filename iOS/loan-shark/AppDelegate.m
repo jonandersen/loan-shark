@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "User.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,16 @@
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStack];
     [self customizeiPhoneTheme];
+    NSMutableArray *users = [NSMutableArray arrayWithArray:[User findAll]];
+    if([users count] == 0){
+        for(int i = 0; i < 10; i++){
+            User *user =  [User createEntity];
+            user.firstname = [NSString stringWithFormat:@"firstName%d",i];
+            user.lastname = [NSString stringWithFormat:@"lastName%d",i];
+            user.email = [NSString stringWithFormat:@"first.last.%d@example.com",i];
+        }
+    }
+    
     return YES;
 }
 

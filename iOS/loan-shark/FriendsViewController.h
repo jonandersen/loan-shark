@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendPickerViewController.h"
 
-@interface FriendsViewController : UITableViewController
+@interface FriendsViewController : UITableViewController <FriendPickerViewControllerDelegate> 
 
 @end

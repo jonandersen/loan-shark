@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0532D4AF16A3144D009598AD /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0532D4AE16A3144D009598AD /* FriendCell.m */; };
 		0532D4B216A31A57009598AD /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0532D4B116A31A57009598AD /* TransactionCell.m */; };
-		053F055D169FD2D900F2E8FB /* FriendsTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */; };
+		053F055D169FD2D900F2E8FB /* FriendPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F055C169FD2D900F2E8FB /* FriendPickerViewController.m */; };
 		05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05418D32169EF2EB0092372D /* TransactionsViewController.m */; };
 		056E9C30169DA76200BE97BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C2F169DA76200BE97BB /* UIKit.framework */; };
 		056E9C32169DA76200BE97BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E9C31169DA76200BE97BB /* Foundation.framework */; };
@@ -247,8 +247,8 @@
 		0532D4AE16A3144D009598AD /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		0532D4B016A31A57009598AD /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
 		0532D4B116A31A57009598AD /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
-		053F055B169FD2D900F2E8FB /* FriendsTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTransactionViewController.h; sourceTree = "<group>"; };
-		053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTransactionViewController.m; sourceTree = "<group>"; };
+		053F055B169FD2D900F2E8FB /* FriendPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerViewController.h; sourceTree = "<group>"; };
+		053F055C169FD2D900F2E8FB /* FriendPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPickerViewController.m; sourceTree = "<group>"; };
 		05418D31169EF2EB0092372D /* TransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsViewController.h; sourceTree = "<group>"; };
 		05418D32169EF2EB0092372D /* TransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsViewController.m; sourceTree = "<group>"; };
 		056E9C2B169DA76200BE97BB /* Loan Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loan Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -828,8 +828,6 @@
 				05418D32169EF2EB0092372D /* TransactionsViewController.m */,
 				05A2A52D169F050100944843 /* AddTransactionViewController.h */,
 				05A2A52E169F050100944843 /* AddTransactionViewController.m */,
-				053F055B169FD2D900F2E8FB /* FriendsTransactionViewController.h */,
-				053F055C169FD2D900F2E8FB /* FriendsTransactionViewController.m */,
 			);
 			name = Transactions;
 			sourceTree = "<group>";
@@ -839,6 +837,8 @@
 			children = (
 				05C2825816A30A560051C433 /* FriendsViewController.h */,
 				05C2825916A30A560051C433 /* FriendsViewController.m */,
+				053F055B169FD2D900F2E8FB /* FriendPickerViewController.h */,
+				053F055C169FD2D900F2E8FB /* FriendPickerViewController.m */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -1215,7 +1215,7 @@
 				056E9C40169DA76300BE97BB /* AppDelegate.m in Sources */,
 				05418D33169EF2EB0092372D /* TransactionsViewController.m in Sources */,
 				05A2A52F169F050100944843 /* AddTransactionViewController.m in Sources */,
-				053F055D169FD2D900F2E8FB /* FriendsTransactionViewController.m in Sources */,
+				053F055D169FD2D900F2E8FB /* FriendPickerViewController.m in Sources */,
 				05C2824B16A2ECB20051C433 /* MasterCell.m in Sources */,
 				05C2825A16A30A560051C433 /* FriendsViewController.m in Sources */,
 				0532D4AF16A3144D009598AD /* FriendCell.m in Sources */,

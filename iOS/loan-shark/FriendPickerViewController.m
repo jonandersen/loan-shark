@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Crowdme. All rights reserved.
 //
 
-#import "FriendsTransactionViewController.h"
+#import "FriendPickerViewController.h"
+#import "User.h"
 
-@interface FriendsTransactionViewController ()
+@interface FriendPickerViewController ()
 
 @end
 
-@implementation FriendsTransactionViewController
+@implementation FriendPickerViewController
 {
-	NSMutableArray *friends;
     NSMutableArray *boolFriends;
 }
 
@@ -32,34 +32,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    friends = [NSMutableArray arrayWithCapacity:4];
-    boolFriends = [NSMutableArray arrayWithCapacity:[friends count]];
-    [friends addObject:@"Simon Ekvy"];    
-    [friends addObject:@"Johan Anderholm"];
-    [friends addObject:@"Tony Meiner"];
-    [friends addObject:@"Marcus Carlberg"];
-    
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    [boolFriends addObject:[NSNumber numberWithBool:NO]];
-    
+    boolFriends = [NSMutableArray arrayWithCapacity:[self.friends count]];
+    for (int i = 0; i < [self.friends count]; i++){
+        [boolFriends addObject:[NSNumber numberWithBool:NO]];
+    }   
     
     UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
     [self.view setBackgroundColor:bgColor];
-    
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
-	friends = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,15 +55,15 @@
 -(void) viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
         
-        NSMutableArray *selectedFriends = [NSMutableArray arrayWithCapacity:[friends count]];
+        NSMutableArray *selectedFriends = [NSMutableArray arrayWithCapacity:[self.friends count]];
         for (int i = 0; i < [boolFriends count]; i++) {
             if ([boolFriends[i] boolValue]) {
-                [selectedFriends addObject:friends[i]];
+                [selectedFriends addObject:self.friends[i]];
             }
         }
         
         
-        [self.delegate friendsTransactionViewController:self didSelectFriends:selectedFriends];
+        [self.delegate friendPickerViewController:self didSelectFriends:selectedFriends];
     }
     [super viewWillDisappear:animated];
 }
@@ -91,13 +75,15 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [friends count];
+	return [self.friends count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
-	cell.textLabel.text = [friends objectAtIndex:indexPath.row];
+    User *user = [self.friends objectAtIndex:indexPath.row];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",user.firstname, user.lastname];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -110,12 +96,11 @@
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
         [boolFriends replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [boolFriends replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
-    }
-	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	
+    }	
 }
 
 @end
